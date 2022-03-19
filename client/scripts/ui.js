@@ -609,12 +609,12 @@ Events.on('load', () => {
     let loading = true;
 
     function animate() {
-        if (loading || step % dw < dw - 5) {
+//         if (loading || step % dw < dw - 5) {
             requestAnimationFrame(function() {
                 drawCircles();
                 animate();
             });
-        }
+//         }
     }
     window.animateBackground = function(l) {
         loading = l;
