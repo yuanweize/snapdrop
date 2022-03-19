@@ -317,6 +317,14 @@ class SendTextDialog extends Dialog {
         this.$text = this.$el.querySelector('#textInput');
         const button = this.$el.querySelector('form');
         button.addEventListener('submit', e => this._send(e));
+        this.$el.querySelector('[mypaste]').addEventListener('click', (e) => {
+  navigator.clipboard.readText().then((text) => {
+    console.log(text);
+    this.$text.innerText = text;
+    this._send(e);
+    this.hide();
+  });
+})
     }
 
     _onRecipient(recipient) {
