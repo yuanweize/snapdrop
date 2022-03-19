@@ -18,12 +18,12 @@ OU                  = Development
 #   must include the DNS name in the SAN too (otherwise, Chrome and others that
 #   strictly follow the CA/Browser Baseline Requirements will fail).
 
-commonName           = ${ENV::FQDN}
+commonName           = localhost
 
 [ req_ext ]
 subjectKeyIdentifier = hash
 basicConstraints     = CA:FALSE
 keyUsage             = digitalSignature, keyEncipherment
-subjectAltName       = DNS:${ENV::FQDN}
+subjectAltName       = DNS:localhost
 nsComment            = "OpenSSL Generated Certificate"
 extendedKeyUsage     = serverAuth
